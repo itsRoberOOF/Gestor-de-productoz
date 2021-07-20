@@ -14,10 +14,30 @@ namespace Gestor_de_productos
 {
     public partial class FrmMenu : Form
     {
+        void verificarConexion()
+        {
+            MySqlConnection retorno = ControllerConexion.ConnectController();
+            if (retorno != null)
+            {
+                MessageBox.Show("Conexión establecida con exito",
+                                "Conexión completada", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al establecer conexión con el servidor, verifique su conexión a internet o consulte a su adminsitrador.",
+                    "Error de conexión",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
         public FrmMenu()
         {
             InitializeComponent();
+            verificarConexion();
         }
+
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
