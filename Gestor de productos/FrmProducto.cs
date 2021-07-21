@@ -123,7 +123,7 @@ namespace Gestor_de_productos
             else
             {
                 Datos();
-                agregar = new ControllerProductos(nombreP, descripcionP, FElaboracionP, FCaducidadP, CodBarrasP, precioP, pesoP, idproveedor, idlote, idestadoproducto, idtipoproducto);
+                agregar = new ControllerProductos(nombreP, descripcionP, FElaboracionP, FCaducidadP, precioP, pesoP, CodBarrasP, idlote, idproveedor, idestadoproducto, idtipoproducto);
                 bool respuesta = agregar.EnviarDatos_Controller();
                 if (respuesta == true)
                 {
@@ -142,7 +142,7 @@ namespace Gestor_de_productos
             }
         }
 
-        void CargarGridDatos()
+        public void CargarGridDatos()
         {
             datos = ControllerProductos.CargarProductos_Controller();
             dgvProductos.DataSource = datos;
@@ -186,9 +186,9 @@ namespace Gestor_de_productos
             txtCodBarrasP.Text = dgvProductos[7, posicion].Value.ToString();
 
             int idlote = Convert.ToInt16(dgvProductos[8, posicion].Value.ToString());
-            int idproveedor = Convert.ToInt16(dgvProductos[8, posicion].Value.ToString());
-            int idtipoprodu = Convert.ToInt16(dgvProductos[9, posicion].Value.ToString());
+            int idproveedor = Convert.ToInt16(dgvProductos[9, posicion].Value.ToString());
             int idestadoprodu = Convert.ToInt16(dgvProductos[10, posicion].Value.ToString());
+            int idtipoproducto = Convert.ToInt16(dgvProductos[11, posicion].Value.ToString());
 
             cmbLote.DataSource = ControllerProductos.CargarLoteInner_Controller(idlote);
             cmbLote.DisplayMember = "numlote";
@@ -198,7 +198,7 @@ namespace Gestor_de_productos
             cmbProveedor.DisplayMember = "nombres_prv";
             cmbProveedor.ValueMember = "idproveedor";
 
-            cmbTipoP.DataSource = ControllerProductos.CargarTipoProduInner_Controller(idtipoprodu);
+            cmbTipoP.DataSource = ControllerProductos.CargarTipoProduInner_Controller(idtipoproducto);
             cmbTipoP.DisplayMember = "nombre_tipoproducto";
             cmbTipoP.ValueMember = "idtipoproducto";
 
@@ -222,7 +222,7 @@ namespace Gestor_de_productos
             idestadoproducto = Convert.ToInt16(cmbEstadoP.SelectedValue);
             idtipoproducto = Convert.ToInt16(cmbTipoP.SelectedValue);
 
-            agregar = new ControllerProductos(nombreP, descripcionP, FElaboracionP, FCaducidadP, CodBarrasP, precioP, pesoP, idproveedor, idlote, idestadoproducto, idtipoproducto);
+            agregar = new ControllerProductos(nombreP, descripcionP, FElaboracionP, FCaducidadP, precioP, pesoP, CodBarrasP, idlote, idproveedor, idestadoproducto, idtipoproducto);
             bool respuesta = agregar.ActualizarDatos_Controller();
             if (respuesta == true)
             {
@@ -239,7 +239,10 @@ namespace Gestor_de_productos
             ActualizarDatos();
             CargarGridDatos();
         }
+
         #endregion
+
+        #region Validaciones²
 
         private void txtPrecioP_KeyPress(object sender, KeyPressEventArgs a)
         {
@@ -266,6 +269,41 @@ namespace Gestor_de_productos
                 e.Handled = true;
             }
         }
+        #endregion
+
+        #region Eliminar Datos
+
+        void EliminarDatos()
+        {
+            ControllerProductos.idproducto = Convert.ToInt16(txtId.Text);
+            int valor = ControllerProductos.EliminarProducto_Controller();
+            switch (valor)
+            {
+                case -1:
+                    MessageBox.Show("Ocurrio un error al conectar con la base de datos, producto no pudo ser eliminado", "Error critico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case 1:
+                    MessageBox.Show("Producto eliminado correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 2:
+                    MessageBox.Show("Producto no pudo ser eliminado porque existen datos dependientes", "Proceso interrumpido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult ola = MessageBox.Show("¿Estas seguro de eliminar al producto: " + txtNombreP.Text + " ?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (ola == DialogResult.Yes)
+            {
+                EliminarDatos();
+                CargarGridDatos();
+            }
+        }
+
+        #endregion
 
         private void btnMenu_Click(object sender, EventArgs e)
             {
@@ -278,19 +316,39 @@ namespace Gestor_de_productos
                 }
             }
 
-            private void btnCerrar_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea cerrar el programa?",
+             "Cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (MessageBox.Show("¿Desea cerrar el programa?",
-                    "Cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    Application.Exit();
-                }
+               Application.Exit();
             }
+        }
 
-            private void btnAgregar_Click(object sender, EventArgs e)
-            {
-                EnvioDatos();
-                CargarGridDatos();
-            }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            EnvioDatos();
+            CargarGridDatos();
+        }
+
+        private void listadoGeneralDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListaProductos lista = new FrmListaProductos(datos);
+            lista.Show();
+            this.Hide();
+
+        }
+        private void productosVencidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListaProductosV lista = new FrmListaProductosV();
+            lista.Show();
+            this.Hide();
+        }
+        private void productosAgotadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListaProductosA lista = new FrmListaProductosA();
+            lista.Show();
+            this.Hide();
+        }
     }
 } 

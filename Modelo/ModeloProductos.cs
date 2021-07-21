@@ -117,13 +117,47 @@ namespace Modelo
                 return data = null;
             }
         }
-        public static bool RegistrarProducto(string pnombre, string pdescripcion, string pfelaboracion, string pfcaducidad, string pcodbarras, double pprecio, double ppeso, int pidproveedor, int pidlote, int pidestadoproducto, int pidtipoproducto)
+        public static DataTable CargarProductosVencidos()
+        {
+            DataTable data;
+            try
+            {
+                string query = "SELECT * FROM producto WHERE idestadoprodu = 3";
+                MySqlCommand cmdselect = new MySqlCommand(string.Format(query), ModelConexion.getConnect());
+                MySqlDataAdapter adp = new MySqlDataAdapter(cmdselect);
+                data = new DataTable();
+                adp.Fill(data);
+                return data;
+            }
+            catch (Exception)
+            {
+                return data = null;
+            }
+        }
+        public static DataTable CargarProductosAgotados()
+        {
+            DataTable data;
+            try
+            {
+                string query = "SELECT * FROM producto WHERE idestadoprodu = 2";
+                MySqlCommand cmdselect = new MySqlCommand(string.Format(query), ModelConexion.getConnect());
+                MySqlDataAdapter adp = new MySqlDataAdapter(cmdselect);
+                data = new DataTable();
+                adp.Fill(data);
+                return data;
+            }
+            catch (Exception)
+            {
+                return data = null;
+            }
+        }
+        public static bool RegistrarProducto(string pnombre, string pdescripcion, string pfelaboracion, string pfcaducidad, double pprecio, double ppeso, string pcodbarras, int pidlote, int pidproveedor, int pidestadoproducto, int pidtipoproducto)
         {
             bool retorno;
             try
             {
                 //INSERCIÓN DE DATOS
-                MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO producto(nombre_pr, descripcion_pr, fecha_de_elb_pr, fecha_de_exp_pr, precio_pr, peso_pr, codigo_de_barra_pr, idlote, idproveedor, idtipoproducto, idestadoprodu) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}', '{9}', '{10}')", pnombre, pdescripcion, pfelaboracion, pfcaducidad, pcodbarras, pprecio, ppeso, pidproveedor, pidlote, pidestadoproducto, pidtipoproducto), ModelConexion.getConnect());
+                MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO producto(nombre_pr, descripcion_pr, fecha_de_elb_pr, fecha_de_exp_pr, precio_pr, peso_pr, codigo_de_barra_pr, idlote, idproveedor, idtipoproducto, idestadoprodu) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}', '{9}', '{10}')", pnombre, pdescripcion, pfelaboracion, pfcaducidad,pprecio, ppeso, pcodbarras, pidlote, pidproveedor, pidestadoproducto, pidtipoproducto), ModelConexion.getConnect());
                 //VERIFACIÓN DE DATOS
                 retorno = Convert.ToBoolean(cmdinsert.ExecuteNonQuery());
                 //RETORNAR RESPUESTA
@@ -225,6 +259,53 @@ namespace Modelo
                 return retorno = false;
             }
         }
+        #endregion
+        #region Eliminar Datos
+        public static int EliminarProducto(int id)
+        {
+            int retorno = 0;
+            try
+            {
+                MySqlCommand cmdbor = new MySqlCommand(string.Format("DELETE FROM producto WHERE idproducto = '"+id+"'"), ModelConexion.getConnect());
+                retorno = Convert.ToInt16(cmdbor.ExecuteNonQuery());
+                if (retorno == 1)
+                {
+                    retorno = 1;
+                }
+                else
+                {
+                    retorno = 2;
+                }
+                return retorno;
+            }
+            catch (Exception)
+            {
+                return retorno = -1;
+            }
+        }
+        #endregion
+
+        #region Buscar
+
+        public static DataTable BuscarProducto(string wea)
+        {
+            DataTable data;
+            try
+            {
+                string query = "SELECT * FROM producto WHERE nombre_pr  = ?param1 OR codigo_de_barra_pr = ?param1";
+                MySqlCommand cmdselect = new MySqlCommand(string.Format(query), ModelConexion.getConnect());
+                cmdselect.Parameters.Add(new MySqlParameter("param1", wea));
+                MySqlDataAdapter asda = new MySqlDataAdapter(cmdselect);
+                data = new DataTable();
+                asda.Fill(data);
+                return data;
+            }
+            catch (Exception)
+            {
+                return data = null;
+            }
+        }
+
         #endregion
     }
 }

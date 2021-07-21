@@ -71,6 +71,24 @@
     <Compile Include="FrmKardex.Designer.cs">
       <DependentUpon>FrmKardex.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmListaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListaProductos.Designer.cs">
+      <DependentUpon>FrmListaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListaProductosA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListaProductosA.Designer.cs">
+      <DependentUpon>FrmListaProductosA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListaProductosV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListaProductosV.Designer.cs">
+      <DependentUpon>FrmListaProductosV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +115,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKardex.resx">
       <DependentUpon>FrmKardex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListaProductos.resx">
+      <DependentUpon>FrmListaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListaProductosA.resx">
+      <DependentUpon>FrmListaProductosA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListaProductosV.resx">
+      <DependentUpon>FrmListaProductosV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProducto.resx">
       <DependentUpon>FrmProducto.cs</DependentUpon>

@@ -117,7 +117,54 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="toolStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>389, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnVolver.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEySURBVEhLYxgFwwvExMQoxsfHS0C5NAGMUVFRldHR0X+A
+        +BFUjLoA6AsxoOH7gPg/DEOlqAfCw8MVIiIibiBbQnWLgAZaAPFbZAtgGKqEchAZGWkJ9Ml7bJaAMFC+
+        HBhnGUA6Akh7AoPXCohVQkNDeaBGEAZADfr4LCGEgZZ/BdJngA5wgRqJCYCKVIGKXiBrpAAfgBqLCYAW
+        XcaigVz8GmosJgBadBaLBnLxK6ixmAAoKQPE95EUU4K3QY3FDkCpB5gYnmHRSAz+ANR7FZgQtgBDxwxq
+        JG4AVKxNwLJSIE4CGugPNNAmNjZWE+hAbqh20gBQsxzQoJtoFoAxVAn1QFxcnDS2lAiVpi4AVgscQMNn
+        0twiGAAGYzbQkp9AfAcqRDsAjDdhYHnGD+WOgmEFGBgAhbZv021aso4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIASURBVEhL7ZbPShtRGMWD1VZQwUIpok9g03fISsmihdI6
+        mP+BLAakURAfIA9gS/sI7aLQhb6CWxG7qsZoMPoAli7agiiY+PvgRIKBTG4mTbvIgcNMzr3nO3duvvkT
+        GeK/QTwef5ROpzNwG9bgT7GWSqW2kslk2uZoen9AYY+Ac9joxEQicZbJZN7I1js8z3tA6MdmYa7qgN/r
+        BEQ5f2Ik6LlpjB+2zPtgXpVxB0XeqdgVAcVOxWyMeass6lqeTQ25gaBXLaELkgPB/EXzwDpX/lJyd2D1
+        DzGewgbb6EvuGgSumBdWfd8fkxwMjAkZv5dKpRHJXcO2nS0va+Ge5GBg+CrTmiRnqOFs8V8kBYPJVTNl
+        s9l5Sc6wbldwRVIwmPzbTGzZpCRnFAqFKavBlv+SFAwm/zETq56Q5IyegjGE3moCowo+lhQMDP+mucLe
+        TrFYbBRvxWo43U5hHyB4NswL3R4ghhCPzDw7dsOxzgJeSHYDxvfNcM7f2hNJQ22wMRZYpJks1JrqRz6f
+        n9GwG6wYgW2vRc6fUXTcaN0r7e61CC/siH7Uc7iBIkuwqw8Bwl7Dx/z+Jr2ay+XmVMod9llj3U7RzwSU
+        4aVYRv+Evtz66WPhcL8v4a64H84iZzX098F/PN0M53gy0HC6/ak1pq58T/JgYOFc7S7BO5KGGCQikVu7
+        SGEoMhjGMwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnRecargar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIJSURBVEhLxZXLSltRFIaTWqy2ikSloDgozlQ6ko4zqXIe
+        ICF3QoPGgaCGlkIGJU/iE7RYBKf6AoqgprQ6snXWFulF0Kig30rWTnbuCRzwh5+9s9a/Lmff4nELsVhs
+        DKb0Z2eIx+PPo9HoIvxMcB7+hOfwNBKJbDAu4fMxHxU/47qGtobjOE8IzIbD4X8E3rUimr+MJzInZktT
+        NEcoFHqB+MAk6JJ7mqYxEEzQ0ZkdxGcfMa5hn5GlEMqcbt9jv7W18Iemqkc6nX6KYN8SF0iyHAwGe1RS
+        htgo9NHSFon+Cre3pKoBgg+WuMAGz6mrFl7ZTEtbRYr4VFdBIpEYsTcUUVpddaD7IfyvhWhfMc7Cl3BS
+        6Pf7H6u0AoQLJjk8zOVyj9TlDvjkTVOALlbU7B5IXDzHQpZrSs3ugcT/TQHWeEDN7oENvjAFOD3P1Nw1
+        UqnUoMkjh0bN7i2RXECrwDc1u7fJxGZMHnJuqLnumOYb3d52kPNP7FeTh6V+o676iwZX1dUx6P6dFf8n
+        EAgMq6sEjOWngmLXjPPqagu6ddDfmHiKZdVVQTePnYH4ZM+0IZN8l+77VVINBE2fazidTCb7hGjkuc4w
+        fqnRfsc2rukaQ/YD8Y4d2AkpuC2xmqY19C/zLd38bpSshr/ka1iuXg3vHHIzCRZ8gscUvBTKnOWQP5yI
+        aFT+EPB47gFVtbHSgHSQlQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>141, 17</value>
+  </metadata>
   <data name="btnCerrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -128,14 +175,14 @@
         JStfwzuBWjQkY9dH6WDQh2n6An9mKy7bggCTAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnMaximizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABHSURBVFhH7Y6xCQAwDMPyZ/6/o108BkwghRQk8GihAFhJ
         Zp4Xk95TnScmvad9MBBAAAEEEEAAAQT8GzA96T3VeWLSA2wi4gKyPEoQr68SOQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="toolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRestaurar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACRSURBVFhH7Y5BCsAgEMT8p/9/RwuylqEMStxLCxuYi5ho
@@ -144,17 +191,11 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMinimizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVFhH7cyxCQAwDANB76n950gal4E0Cbi4gy+lAgBG
         SrJ+1Pd3p/GL+h4AmKRqA7ytWsFeOsb3AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>173, 26</value>
-  </metadata>
-  <metadata name="menu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>297, 26</value>
-  </metadata>
 </root>

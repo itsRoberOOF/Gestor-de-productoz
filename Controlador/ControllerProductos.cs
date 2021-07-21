@@ -54,7 +54,7 @@ namespace Controlador
         public int idestadoproducto { get; set; }
         public int idtipoproducto { get; set; }
 
-        public ControllerProductos(string pnombre, string pdescripcion, string pfelaboracion, string pfcaducidad, string pcodbarras, double pprecio, double ppeso, int pidproveedor, int pidlote, int pidestadoproducto, int pidtipoproducto)
+        public ControllerProductos(string pnombre, string pdescripcion, string pfelaboracion, string pfcaducidad, double pprecio, double ppeso, string pcodbarras, int pidlote, int pidproveedor, int pidestadoproducto, int pidtipoproducto)
         {
             //ATRIBUTO = PARAMETRO
             nombreP = pnombre;
@@ -72,12 +72,22 @@ namespace Controlador
 
         public bool EnviarDatos_Controller()
         {
-            return ModeloProductos.RegistrarProducto(nombreP, descripcionP, FElaboracionP, FCaducidadP, CodBarrasP, precioP, pesoP, idproveedor, idlote, idestadoproducto ,idtipoproducto);
+            return ModeloProductos.RegistrarProducto(nombreP, descripcionP, FElaboracionP, FCaducidadP, precioP, pesoP, CodBarrasP, idlote, idproveedor, idestadoproducto, idtipoproducto);
         }
 
         public static DataTable CargarProductos_Controller()
         {
             DataTable datos = ModeloProductos.CargarProductos();
+            return datos;
+        }
+        public static DataTable CargarProductosVencidos_Controller()
+        {
+            DataTable datos = ModeloProductos.CargarProductosVencidos();
+            return datos;
+        }
+        public static DataTable CargarProductosAgotados_Controller()
+        {
+            DataTable datos = ModeloProductos.CargarProductosAgotados();
             return datos;
         }
         #endregion
@@ -105,5 +115,22 @@ namespace Controlador
             return ModeloProductos.ActualizarProducto(idproducto, nombreP, descripcionP, FElaboracionP, FCaducidadP, CodBarrasP, precioP, pesoP, idproveedor, idlote, idestadoproducto, idtipoproducto);
         }
         #endregion
+        #region Eliminar producto
+
+        public static int EliminarProducto_Controller()
+        {
+            return ModeloProductos.EliminarProducto(idproducto);
+        }
+
+        #endregion
+
+        #region Buscar
+
+        public static DataTable BuscarProducto_Controller(string wea)
+        {
+            DataTable datos = ModeloProductos.BuscarProducto(wea);
+            return datos;
+            #endregion
+        }
     }
 }
