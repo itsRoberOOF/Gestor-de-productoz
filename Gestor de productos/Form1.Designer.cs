@@ -201,7 +201,7 @@
             this.btnKardex.BackColor = System.Drawing.Color.Silver;
             this.btnKardex.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnKardex.Image = ((System.Drawing.Image)(resources.GetObject("btnKardex.Image")));
-            this.btnKardex.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnKardex.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKardex.Location = new System.Drawing.Point(21, 289);
             this.btnKardex.Name = "btnKardex";
             this.btnKardex.Size = new System.Drawing.Size(206, 47);
