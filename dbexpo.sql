@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-07-2021 a las 06:41:22
+-- Tiempo de generación: 21-07-2021 a las 21:47:01
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -297,8 +297,10 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`idproducto`, `nombre_pr`, `descripcion_pr`, `fecha_de_elb_pr`, `fecha_de_exp_pr`, `precio_pr`, `peso_pr`, `codigo_de_barra_pr`, `idlote`, `idproveedor`, `idestadoprodu`, `idtipoproducto`) VALUES
-(1, 'Laptop 2tb', 'Laptop piola con 2tb de memoria', '2017-07-20', '2021-07-20', '3000.00', '0.00', '', 1, 1, 1, 1),
-(2, 'Refri mabe v5', 'Refri para la prueba intento 5', '2018-06-25', '2021-07-07', '5000.00', '0.00', '', 3, 3, 2, 3);
+(1, 'Laptop 2tb', 'Laptop piola con 2tb de memoria', '2017-07-20', '2021-07-20', '3000.00', '0.00', '', 1, 1, 2, 3),
+(3, 'Refri prueba', 'Refri de prueba', '2021-07-07', '2021-07-07', '5000.00', '0.00', 'P0T0214124ZO2', 3, 3, 2, 2),
+(5, 'Telefono samsung', 'Un telefono samsung', '2021-07-07', '2021-07-07', '1000.00', '0.00', 'HOLA214924ZO2', 2, 2, 2, 1),
+(7, 'Telefono apple', 'Un telefono apple', '2021-07-07', '2021-07-07', '1000.00', '0.00', '', 2, 3, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -681,7 +683,7 @@ ALTER TABLE `municipio`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
